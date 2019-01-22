@@ -1,0 +1,47 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: websocket
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:/www/ecampus/static/
+      ,file:///D:\project\zj-websocket\zj-websocket-chat/files/
+    
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/vhr?characterEncoding=utf-8
+    username: root
+    password: root
+    
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    timeout: 3000
+    
+  cache:
+    cluster-name: menus_cache
+    time-to-live: 1800s
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: 1510161612@qq.com
+    password: fhmvfkwxjwmzhhjd
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+        debug: true
+
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.zj.modules.domain
+  type-handlers-package: com.zj.modules.mapper
+  mapper-locations: classpath:com.zj.modules.mapper/*.xml
+    
+    
+    
